@@ -412,8 +412,8 @@
       min-height: 48px;
       padding: 0 14px;
       border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      background: #f8fbfc;
+      border: 1px solid #dbe8e3;
+      background: #f6faf8;
       color: var(--text);
       outline: none;
       transition: 0.18s ease;
@@ -421,9 +421,21 @@
 
     input:focus,
     select:focus {
-      border-color: #78aaa6;
-      box-shadow: 0 0 0 3px rgba(92, 169, 162, 0.11);
+      border-color: #79aaa2;
+      box-shadow: 0 0 0 3px rgba(92, 169, 162, 0.10);
       background: #ffffff;
+    }
+
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-text-fill-color: var(--text) !important;
+      -webkit-box-shadow: 0 0 0 1000px #f6faf8 inset !important;
+      box-shadow: 0 0 0 1000px #f6faf8 inset !important;
+      caret-color: var(--text);
+      transition: background-color 9999s ease-out 0s;
     }
 
     .checkbox-row {
