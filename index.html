@@ -13,26 +13,30 @@
 
   <style>
     :root {
-      --bg: #f4f8f8;
-      --surface: #ffffff;
-      --surface-soft: #edf6f5;
+      --bg: #f3f6f5;
+      --surface: #fffefd;
+      --surface-soft: #eef5f3;
 
-      --navy: #173042;
-      --navy-soft: #274b5c;
+      --navy: #35515f;
+      --navy-soft: #58707b;
 
-      --teal: #4f8f8a;
-      --teal-dark: #3c7773;
-      --teal-light: #dceeed;
+      --teal: #79a9a2;
+      --teal-dark: #5f8b85;
+      --teal-light: #e5f0ee;
 
-      --text: #18303d;
-      --muted: #6d818a;
+      --sage: #dfe9e2;
+      --blue-soft: #e6eef2;
+      --sand: #f4f0e9;
 
-      --border: #d9e6e6;
+      --text: #334b56;
+      --muted: #7a8d94;
 
-      --danger: #b85f66;
-      --success: #4b8b70;
+      --border: #dce6e3;
 
-      --shadow: 0 22px 60px rgba(31, 69, 79, 0.12);
+      --danger: #ad686d;
+      --success: #5f8c76;
+
+      --shadow: 0 18px 46px rgba(65, 91, 96, 0.10);
 
       --radius-xl: 28px;
       --radius-lg: 18px;
@@ -57,8 +61,9 @@
         sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, #e1f0ef 0%, transparent 32%),
-        linear-gradient(135deg, #f6faf9 0%, #eef5f5 100%);
+        radial-gradient(circle at 12% 10%, rgba(204, 228, 222, 0.58) 0%, transparent 34%),
+        radial-gradient(circle at 88% 92%, rgba(220, 231, 238, 0.58) 0%, transparent 30%),
+        linear-gradient(135deg, #f5f7f6 0%, #eef3f2 100%);
     }
 
     body {
@@ -75,6 +80,18 @@
       cursor: pointer;
     }
 
+    .primary-btn,
+    .tab-btn,
+    input,
+    select {
+      transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease,
+        filter 0.18s ease;
+    }
+
     .page-shell {
       min-height: 100vh;
       display: grid;
@@ -89,15 +106,21 @@
       flex-direction: column;
       justify-content: space-between;
 
-      color: white;
+      color: var(--text);
 
       background:
         radial-gradient(
-          circle at 10% 10%,
-          rgba(114, 188, 181, 0.30),
+          circle at 13% 12%,
+          rgba(180, 215, 207, 0.52),
           transparent 34%
         ),
-        linear-gradient(150deg, #173042 0%, #20485a 56%, #336f70 100%);
+        radial-gradient(
+          circle at 90% 78%,
+          rgba(214, 226, 234, 0.52),
+          transparent 30%
+        ),
+        linear-gradient(150deg, #f6faf8 0%, #edf5f2 52%, #f3f5f7 100%);
+      border-right: 1px solid rgba(205, 220, 217, 0.72);
     }
 
     .brand-panel::after {
@@ -108,7 +131,21 @@
       right: -120px;
       bottom: -130px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(121, 169, 162, 0.08);
+    }
+
+    .brand-panel::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      left: 42%;
+      top: 18%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.34);
+      filter: blur(2px);
+      opacity: 0.72;
+      pointer-events: none;
     }
 
     .brand-top,
@@ -132,8 +169,10 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: 0.5px;
-      background: rgba(255, 255, 255, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(204, 220, 216, 0.90);
+      color: var(--teal-dark);
+      box-shadow: 0 8px 24px rgba(76, 111, 112, 0.08);
       backdrop-filter: blur(14px);
     }
 
@@ -146,7 +185,7 @@
     .brand-subtitle {
       margin-top: 5px;
       font-size: 13px;
-      color: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
     }
 
     .brand-body {
@@ -155,7 +194,7 @@
     }
 
     .eyebrow {
-      color: #9ed1cc;
+      color: var(--teal-dark);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -174,7 +213,7 @@
       max-width: 540px;
       font-size: 17px;
       line-height: 1.75;
-      color: rgba(255, 255, 255, 0.78);
+      color: #657b84;
     }
 
     .feature-grid {
@@ -187,8 +226,10 @@
     .feature-card {
       padding: 18px;
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(210, 224, 221, 0.90);
+      box-shadow: 0 10px 28px rgba(75, 102, 106, 0.055);
+      backdrop-filter: blur(10px);
     }
 
     .feature-card strong {
@@ -198,14 +239,14 @@
     }
 
     .feature-card span {
-      color: rgba(255, 255, 255, 0.67);
+      color: #71848c;
       font-size: 13px;
       line-height: 1.45;
     }
 
     .brand-footer {
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.55);
+      color: #84949a;
     }
 
     .auth-side {
@@ -216,12 +257,12 @@
 
     .auth-card {
       width: min(760px, 100%);
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(211, 228, 228, 0.9);
+      background: rgba(255, 254, 252, 0.92);
+      border: 1px solid rgba(213, 224, 222, 0.92);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
       padding: 34px;
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(18px);
     }
 
     .auth-card-header {
@@ -262,7 +303,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      background: #eff5f5;
+      background: #eef3f2;
       border-radius: 14px;
       padding: 6px;
       margin-bottom: 28px;
@@ -280,7 +321,7 @@
     .tab-btn.active {
       background: white;
       color: var(--navy);
-      box-shadow: 0 4px 12px rgba(28, 68, 76, 0.08);
+      box-shadow: 0 5px 16px rgba(64, 88, 92, 0.07);
     }
 
     .panel {
@@ -326,7 +367,7 @@
     label {
       font-size: 13px;
       font-weight: 750;
-      color: #38515c;
+      color: #4a626c;
     }
 
     input,
@@ -336,7 +377,7 @@
       padding: 0 14px;
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
-      background: #fbfdfd;
+      background: #fcfdfc;
       color: var(--text);
       outline: none;
       transition: 0.18s ease;
@@ -344,8 +385,8 @@
 
     input:focus,
     select:focus {
-      border-color: #7db4af;
-      box-shadow: 0 0 0 4px rgba(79, 143, 138, 0.11);
+      border-color: #91b8b2;
+      box-shadow: 0 0 0 4px rgba(121, 169, 162, 0.10);
       background: white;
     }
 
@@ -375,11 +416,12 @@
       background: linear-gradient(135deg, var(--teal), var(--teal-dark));
       color: white;
       font-weight: 800;
-      box-shadow: 0 10px 24px rgba(63, 122, 117, 0.22);
+      box-shadow: 0 10px 22px rgba(95, 139, 133, 0.16);
     }
 
     .primary-btn:hover {
-      filter: brightness(0.98);
+      filter: brightness(0.99);
+      transform: translateY(-1px);
     }
 
     .auth-meta {
