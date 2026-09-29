@@ -1043,6 +1043,16 @@
       }
     }
 
+  
+    /* Public access is intentionally Sign In only. */
+    .auth-card {
+      max-width: 690px;
+    }
+
+    #signinPanel {
+      display: block;
+    }
+
   </style>
 </head>
 
@@ -1153,26 +1163,6 @@
 
         </div>
 
-        <div class="tabs">
-
-          <button
-            class="tab-btn active"
-            type="button"
-            data-target="signinPanel"
-          >
-            Sign In
-          </button>
-
-          <button
-            class="tab-btn"
-            type="button"
-            data-target="companyPanel"
-          >
-            New Company
-          </button>
-
-        </div>
-
         <section
           id="signinPanel"
           class="panel active"
@@ -1251,181 +1241,6 @@
 
         </section>
 
-        <section
-          id="companyPanel"
-          class="panel"
-        >
-
-          <div class="panel-heading">
-            <h3>Create clinic workspace</h3>
-            <p>
-              Start a secure company workspace and select your medical specialty.
-            </p>
-          </div>
-
-          <form id="companyForm">
-
-            <div class="form-grid">
-
-              <div class="field">
-                <label for="companyName">
-                  Clinic / Company name
-                </label>
-
-                <input
-                  id="companyName"
-                  name="company_name"
-                  type="text"
-                  required
-                />
-              </div>
-
-              <div class="field">
-                <label for="ownerName">
-                  Owner name
-                </label>
-
-                <input
-                  id="ownerName"
-                  name="owner_name"
-                  type="text"
-                  required
-                />
-              </div>
-
-              <div class="field">
-                <label for="country">
-                  Country
-                </label>
-
-                <input
-                  id="country"
-                  name="country"
-                  type="text"
-                  required
-                />
-              </div>
-
-              <div class="field">
-                <label for="phone">
-                  Phone
-                </label>
-
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                />
-              </div>
-
-              <div class="field full">
-                <label for="specialty">
-                  Primary specialty
-                </label>
-
-                <select
-                  id="specialty"
-                  name="specialty_code"
-                  required
-                >
-                  <option value="">
-                    Select specialty
-                  </option>
-
-                  <option value="general_practice">
-                    General Practice
-                  </option>
-
-                  <option value="dental">
-                    Dental
-                  </option>
-
-                  <option value="cardiology">
-                    Cardiology
-                  </option>
-
-                  <option value="ent">
-                    ENT
-                  </option>
-
-                  <option value="ophthalmology">
-                    Ophthalmology
-                  </option>
-
-                  <option value="pediatrics">
-                    Pediatrics
-                  </option>
-
-                  <option value="dermatology">
-                    Dermatology
-                  </option>
-
-                  <option value="gynecology">
-                    Gynecology / OBGYN
-                  </option>
-
-                  <option value="orthopedics">
-                    Orthopedics
-                  </option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="companyEmail">
-                  Email
-                </label>
-
-                <input
-                  id="companyEmail"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                />
-              </div>
-
-              <div class="field full">
-                <label for="companyPassword">
-                  Password
-                </label>
-
-                <input
-                  id="companyPassword"
-                  name="password"
-                  type="password"
-                  autocomplete="new-password"
-                  minlength="8"
-                  required
-                />
-              </div>
-
-            </div>
-
-            <label class="checkbox-row">
-
-              <input
-                id="termsAccepted"
-                type="checkbox"
-                required
-              />
-
-              <span>
-                I accept the service terms and account rules.
-              </span>
-
-            </label>
-
-            <button
-              class="primary-btn"
-              type="submit"
-            >
-              Create Company Account
-            </button>
-
-          </form>
-
-        </section>
-
         <div
           id="systemMessage"
           class="system-message"
@@ -1438,29 +1253,7 @@
 
   </main>
 
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const panels = document.querySelectorAll('.panel');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const target = button.dataset.target;
-
-        tabButtons.forEach(item => {
-          item.classList.remove('active');
-        });
-
-        panels.forEach(panel => {
-          panel.classList.remove('active');
-        });
-
-        button.classList.add('active');
-        document.getElementById(target)?.classList.add('active');
-      });
-    });
-  </script>
-
-  <script src="./cloud-config.js"></script>
+<script src="./cloud-config.js"></script>
 <script type="module" src="./auth.js"></script>
 
 </body>
