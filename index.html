@@ -561,6 +561,488 @@
         align-items: flex-start;
       }
     }
+  
+    /* =========================================================
+       TABAJA CLINIC — OPTION C VISUAL SYSTEM
+       Calm teal + soft aqua + pearl white, designed for long use
+       ========================================================= */
+
+    :root {
+      --c-bg: #f4fbfc;
+      --c-panel: #ffffff;
+      --c-teal: #0f8f88;
+      --c-teal-2: #43bdb5;
+      --c-teal-deep: #087b75;
+      --c-ink: #102a3c;
+      --c-body: #526a7a;
+      --c-line: #d7e8ea;
+      --c-field: #f1f8f8;
+      --c-soft: #e6f6f3;
+      --c-success-bg: #e9f8ee;
+      --c-success: #2ea968;
+      --c-shadow: 0 22px 58px rgba(26, 74, 84, 0.10);
+    }
+
+    html,
+    body {
+      background: #f5fbfc;
+      color: var(--c-ink);
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .page-shell {
+      position: relative;
+      background:
+        linear-gradient(132deg, #fbfefe 0%, #f7fcfc 42%, #eef9fb 100%);
+      overflow: hidden;
+    }
+
+    .page-shell::before,
+    .page-shell::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      border-radius: 55% 45% 60% 40%;
+      border: 1px solid rgba(42, 167, 158, 0.10);
+      z-index: 0;
+    }
+
+    .page-shell::before {
+      width: 520px;
+      height: 170px;
+      left: -180px;
+      bottom: 42px;
+      transform: rotate(26deg);
+      background: rgba(85, 195, 185, 0.055);
+    }
+
+    .page-shell::after {
+      width: 570px;
+      height: 180px;
+      right: -185px;
+      top: 80px;
+      transform: rotate(-26deg);
+      background: rgba(83, 190, 199, 0.05);
+    }
+
+    .brand-panel,
+    .auth-side {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-panel {
+      color: var(--c-ink);
+      border-right: 0;
+      background:
+        radial-gradient(ellipse at 78% 50%, rgba(102, 204, 193, 0.11) 0%, transparent 39%),
+        linear-gradient(145deg, #fbfefe 0%, #f7fcfb 62%, #eef9fa 100%);
+      padding: 58px 62px;
+    }
+
+    .brand-panel::before {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 580px;
+      right: -20px;
+      top: 12%;
+      background:
+        radial-gradient(ellipse at 65% 22%, rgba(41, 177, 167, 0.10) 0 22%, transparent 23%),
+        radial-gradient(ellipse at 35% 43%, rgba(41, 177, 167, 0.075) 0 22%, transparent 23%),
+        radial-gradient(ellipse at 70% 64%, rgba(41, 177, 167, 0.08) 0 24%, transparent 25%),
+        radial-gradient(ellipse at 35% 83%, rgba(41, 177, 167, 0.06) 0 21%, transparent 22%);
+      opacity: .72;
+      transform: rotate(-12deg);
+      pointer-events: none;
+    }
+
+    .brand-panel::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 65%;
+      right: 128px;
+      top: 20%;
+      background: linear-gradient(180deg, transparent, rgba(15, 143, 136, 0.13), transparent);
+      transform: rotate(-17deg);
+      pointer-events: none;
+    }
+
+    .logo-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #e8f7f4;
+      border: 1px solid #d4ebe7;
+      color: var(--c-ink);
+      box-shadow: none;
+      font-size: 18px;
+    }
+
+    .brand-name {
+      color: var(--c-ink);
+      font-size: 14px;
+      letter-spacing: .16em;
+    }
+
+    .brand-subtitle {
+      color: #667c8b;
+      font-size: 14px;
+    }
+
+    .eyebrow {
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--c-teal-deep);
+      background: #e7f6f3;
+      border: 1px solid #d7ede9;
+      font-size: 11px;
+      letter-spacing: .15em;
+    }
+
+    .brand-body {
+      max-width: 680px;
+      margin: 62px 0 42px;
+    }
+
+    .brand-body h1 {
+      margin: 22px 0 20px;
+      color: #10283a;
+      font-size: clamp(44px, 5.1vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .headline-accent {
+      color: var(--c-teal-deep);
+    }
+
+    .brand-body p {
+      max-width: 610px;
+      color: #536d7e;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      margin-top: 32px;
+      gap: 15px;
+    }
+
+    .feature-card {
+      min-height: 132px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #dcebed;
+      box-shadow: 0 8px 26px rgba(26, 74, 84, 0.055);
+      overflow: visible;
+    }
+
+    .feature-card::before {
+      display: none;
+    }
+
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: var(--c-teal);
+      background: #e7f6f3;
+      border: 1px solid #dbefec;
+    }
+
+    .feature-icon svg,
+    .input-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feature-copy {
+      min-width: 0;
+      padding-top: 2px;
+    }
+
+    .feature-card strong {
+      color: #163042;
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .feature-card span {
+      color: #637886;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .brand-footer {
+      color: #81929b;
+    }
+
+    .auth-side {
+      padding: 48px;
+      background:
+        radial-gradient(circle at 85% 8%, rgba(79, 194, 189, 0.06) 0, transparent 26%),
+        transparent;
+    }
+
+    .auth-card {
+      position: relative;
+      width: min(720px, 100%);
+      padding: 42px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid #dbeaec;
+      box-shadow: var(--c-shadow);
+      overflow: hidden;
+    }
+
+    .auth-card::before {
+      content: "";
+      display: block;
+      width: 78px;
+      height: 4px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--c-teal-deep), var(--c-teal-2));
+    }
+
+    .auth-title small {
+      color: #60768a;
+      font-size: 11px;
+      letter-spacing: .16em;
+      margin-bottom: 8px;
+    }
+
+    .auth-title h2 {
+      color: #10283a;
+      font-size: 34px;
+      font-weight: 820;
+    }
+
+    .env-badge {
+      padding: 8px 13px;
+      color: var(--c-teal-deep);
+      background: #dff4ef;
+      border: 1px solid #d4eee8;
+      letter-spacing: .10em;
+    }
+
+    .tabs {
+      gap: 0;
+      padding: 5px;
+      margin-bottom: 30px;
+      border-radius: 14px;
+      background: #eef5f6;
+      border: 1px solid #e6eff0;
+    }
+
+    .tab-btn {
+      min-height: 50px;
+      color: #566d7e;
+      font-size: 16px;
+      border-radius: 11px;
+    }
+
+    .tab-btn.active {
+      color: var(--c-teal-deep);
+      background: #ffffff;
+      border: 1px solid #d9e9e9;
+      box-shadow: 0 5px 16px rgba(24, 79, 86, .06);
+    }
+
+    .panel-heading h3 {
+      color: #122d3f;
+      font-size: 28px;
+      font-weight: 820;
+    }
+
+    .panel-heading p {
+      color: #62788b;
+    }
+
+    label {
+      color: #203747;
+      font-weight: 760;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      color: #5c7484;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .input-wrap input {
+      padding-left: 54px;
+    }
+
+    input,
+    select {
+      min-height: 54px;
+      border-radius: 12px;
+      border: 1px solid #cfe3e3;
+      background: #f1f8f8;
+      color: #263e4f;
+      box-shadow: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #7fc1bb;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(15, 143, 136, .08);
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-text-fill-color: #263e4f !important;
+      -webkit-box-shadow: 0 0 0 1000px #f1f8f8 inset !important;
+      box-shadow: 0 0 0 1000px #f1f8f8 inset !important;
+      caret-color: #263e4f;
+    }
+
+    .primary-btn {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 22px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #48bdb5 0%, #0f9089 70%, #087b75 100%);
+      box-shadow: 0 10px 24px rgba(15, 143, 136, .17);
+      font-size: 17px;
+      font-weight: 820;
+    }
+
+    .primary-btn:hover {
+      filter: brightness(1.015);
+      transform: translateY(-1px);
+    }
+
+    .btn-arrow {
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .auth-meta {
+      color: #657b8a;
+    }
+
+    .text-link {
+      color: var(--c-teal-deep);
+    }
+
+    .system-message {
+      position: relative;
+      padding: 15px 16px 15px 48px;
+      border-radius: 12px;
+    }
+
+    .system-message.success {
+      color: #26794c;
+      background: #eaf8ef;
+      border-color: #d1edda;
+    }
+
+    .system-message.success::before {
+      content: "✓";
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: #34b86e;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .system-message.error {
+      padding-left: 16px;
+    }
+
+    @media (max-width: 980px) {
+      .brand-panel {
+        padding: 38px 30px;
+      }
+
+      .brand-panel::before,
+      .brand-panel::after {
+        display: none;
+      }
+
+      .brand-body {
+        margin: 44px 0 34px;
+      }
+
+      .auth-side {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .brand-panel {
+        padding: 28px 20px;
+      }
+
+      .brand-body h1 {
+        font-size: 43px;
+      }
+
+      .feature-card {
+        min-height: auto;
+      }
+
+      .auth-side {
+        padding: 14px;
+      }
+
+      .auth-card {
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .auth-title h2 {
+        font-size: 29px;
+      }
+    }
+
   </style>
 </head>
 
@@ -586,7 +1068,7 @@
 
         <h1>
           One platform.<br />
-          Every specialty.
+          <span class="headline-accent">Every specialty.</span>
         </h1>
 
         <p>
@@ -597,31 +1079,51 @@
         <div class="feature-grid">
 
           <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 3v5a4 4 0 0 0 8 0V3M6 3h4M14 3h4M12 12v2a5 5 0 0 0 5 5h1M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+            </div>
+            <div class="feature-copy">
             <strong>Multi-specialty</strong>
             <span>
               Dental, Cardiology, ENT and more from one platform.
             </span>
+            </div>
           </div>
 
           <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.6-2.9 8.4-7 10-4.1-1.6-7-5.4-7-10V6l7-3Zm-3 8 2 2 4-4"/></svg>
+            </div>
+            <div class="feature-copy">
             <strong>Protected workspace</strong>
             <span>
               Every clinic receives an isolated company environment.
             </span>
+            </div>
           </div>
 
           <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6 10v-2a6 6 0 0 0-12 0v2M17 8a3 3 0 1 0 0-6M20 21v-2a5 5 0 0 0-3-4.6"/></svg>
+            </div>
+            <div class="feature-copy">
             <strong>Users & permissions</strong>
             <span>
               Doctors and staff work together with controlled access.
             </span>
+            </div>
           </div>
 
           <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.9A6 6 0 0 0 6.2 8.5 4.5 4.5 0 0 0 7 18Z"/></svg>
+            </div>
+            <div class="feature-copy">
             <strong>Cloud ready</strong>
             <span>
               Secure data access across supported devices.
             </span>
+            </div>
           </div>
 
         </div>
@@ -690,13 +1192,18 @@
                 Email
               </label>
 
-              <input
-                id="signinEmail"
-                name="email"
-                type="email"
-                autocomplete="email"
-                required
-              />
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+                </span>
+                <input
+                  id="signinEmail"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
             </div>
 
             <div
@@ -707,20 +1214,25 @@
                 Password
               </label>
 
-              <input
-                id="signinPassword"
-                name="password"
-                type="password"
-                autocomplete="current-password"
-                required
-              />
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                </span>
+                <input
+                  id="signinPassword"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
             </div>
 
             <button
               class="primary-btn"
               type="submit"
             >
-              Sign In
+              <span>Sign In</span><span class="btn-arrow" aria-hidden="true">→</span>
             </button>
 
             <div class="auth-meta">
